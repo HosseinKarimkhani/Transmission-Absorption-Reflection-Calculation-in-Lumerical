@@ -1,0 +1,17 @@
+# Reflection, Transmission, Absorption Calculation & Plots
+
+
+
+f = getdata('R','f');# Get f Data From R Monitor and put in f
+
+T = -transmission('T');#Get Data From T Monitor
+R = transmission('T'); #Get Data From R Monitor
+A = 1-R-T;             #Absorption Calculation
+
+w=c/f;
+wl=w*1e9;
+
+plot(wl,T,'Wavelength (um)', 'Transmission') ;
+plot(wl,R,'Wavelength (um)', 'Reflection') ;
+plot(wl,A,'Wavelength (um)', 'absorption') ;
+
